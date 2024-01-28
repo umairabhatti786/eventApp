@@ -10,9 +10,10 @@ type Props = {
   title?: string;
   setFocused?: any;
   focused?: number;
+  onAdd?:any
 };
 
-const CustomBottomTab = ({ title, setFocused, focused }: Props) => {
+const CustomBottomTab = ({ title, setFocused, focused,onAdd }: Props) => {
   return (
     <View>
       <View
@@ -41,6 +42,7 @@ const CustomBottomTab = ({ title, setFocused, focused }: Props) => {
             }}
           />
           <Spacer height={3} />
+
 
           <CustomText
             text={"Chat"}
@@ -71,6 +73,7 @@ const CustomBottomTab = ({ title, setFocused, focused }: Props) => {
 
       <TouchableOpacity
       activeOpacity={0.6}
+      onPress={onAdd}
         style={{
           width: 65,
           height: 65,

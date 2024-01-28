@@ -23,6 +23,11 @@ export const images = {
     eventimage2:require("../assets/images/event-image2.png"),
     eventimage3:require("../assets/images/event-image3.png"),
     eventimage4:require("../assets/images/event-image4.png"),
+    blueImage:require("../assets/images/blur-image.jpeg"),
+    newchat:require("../assets/images/new-chat.png"),
+    newevent:require("../assets/images/new-event.png"),
+
+
 
     usertitle:require("../assets/images/user-title.png"),
     usertitle1:require("../assets/images/user-title1.png"),

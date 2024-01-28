@@ -435,7 +435,8 @@ PODS:
     - glog
   - react-native-background-timer (2.4.1):
     - React-Core
-  - react-native-blur (4.3.2):
+  - react-native-blur (4.4.0):
+    - RCT-Folly (= 2021.07.22.00)
     - React-Core
   - react-native-camera (4.2.1):
     - React-Core
@@ -896,7 +897,7 @@ SPEC CHECKSUMS:
   React-jsinspector: aef73cbd43b70675f572214d10fa438c89bf11ba
   React-logger: 2e4aee3e11b3ec4fa6cfd8004610bbb3b8d6cca4
   react-native-background-timer: 17ea5e06803401a379ebf1f20505b793ac44d0fe
-  react-native-blur: cfdad7b3c01d725ab62a8a729f42ea463998afa2
+  react-native-blur: 69ecfe61d81b32ee7baae10f5d17aeb4e2594b10
   react-native-camera: 3eae183c1d111103963f3dd913b65d01aef8110f
   react-native-fbsdk-next: 9c40664b1501be29572795c2e4c8e347f39f556f
   react-native-maps: 4f45622710094c3603b262279c40026750579b1f
