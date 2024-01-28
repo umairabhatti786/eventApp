@@ -1,85 +1,84 @@
-import {
-  Image,
-  Pressable,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { Text, TouchableOpacity, View, Image } from "react-native";
 import { colors } from "../../utils/colors";
+import { appStyles } from "../../utils/AppStyles";
 import CustomText from "../CustomText";
-import React from "react";
-import { Spacer } from "../Spacer";
 import { images } from "../../assets";
+import { Spacer } from "../Spacer";
+import { image } from "../../assets/defaultimages";
 
 type Props = {
-  taskCount?: number;
-  date?: string;
-  marginLeft?: number;
-  navigation?: any;
-  title?: any;
-  edit?: any;
-  //   status?:string
+  title?: string;
 };
 
-const TopHeader = ({
-  date,
-  taskCount,
-  marginLeft,
-  navigation,
-  title,
-  edit,
-}: Props) => {
+const TopHeader = ({ title }: Props) => {
   return (
-    <View
-      style={{
-        flexDirection: "row",
-        justifyContent: "space-between",
-        alignItems: "center",
-      }}
-    >
-      <View
-        style={{
-          flexDirection: "row",
-          alignItems: "center",
-          width: edit ? "65%" : "70%",
-          justifyContent: "space-between",
-        }}
-      >
-        <TouchableOpacity
-          activeOpacity={0.6}
-          onPress={() => navigation.goBack()}
-        >
+    <View style={appStyles.rowjustify}>
+      <View style={appStyles.row}>
+        <View>
           <Image
-            resizeMode="contain"
-            style={{ width: 40, height: 40 }}
-            source={images.back}
+            style={{ width: 30, height: 30 }}
+            source={image.bell}
+            // resizeMode="contain"
           />
-        </TouchableOpacity>
-        <Spacer width={20} />
+          <View
+            style={{
+              position: "absolute",
+              width: 22,
+              height: 22,
+              borderRadius: 999,
+              backgroundColor: colors.white,
+              right: -12,
+              bottom: 10,
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <CustomText
+              text={"8"}
+              color={colors.black}
+              size={14}
+              fontFam="Poppins-Medium"
+              // fontWeight="Poppins-Bold"
+            />
+          </View>
+        </View>
+        {/* <Spacer width={15} />
 
-        <CustomText
-          text={title || "Create New Task"}
-          color={colors.white}
-          fontFam="Inter-Bold"
-          size={20}
-        />
-      </View>
-      {edit && (
-        <TouchableOpacity
-          activeOpacity={0.6}
-          onPress={() => navigation.navigate("CreateTask", { isEdit: true })}
-        >
+        <Spacer width={15} />
+
+        <TouchableOpacity>
           <Image
-            resizeMode="contain"
-            style={{ width: 20, height: 20 }}
+            style={{ width: 23, height: 23 }}
             source={images.edit}
+            resizeMode="contain"
           />
-        </TouchableOpacity>
-      )}
+        </TouchableOpacity> */}
+      </View>
+
+      {/* <CustomText
+        text={title || "Chats"}
+        color={colors.white}
+        size={27}
+        fontWeight="700"
+        fontFam="SF-Pro-Display-Bold"
+      /> */}
+
+      <TouchableOpacity>
+        <Image
+          style={{ width: 27, height: 27 }}
+          source={image.appicon}
+          resizeMode="contain"
+        />
+      </TouchableOpacity>
+
+      <TouchableOpacity>
+        <Image
+          style={{ width: 25, height: 25 }}
+          source={image.setting}
+          resizeMode="contain"
+        />
+      </TouchableOpacity>
     </View>
   );
 };
 export default TopHeader;
-
-const styles = StyleSheet.create({});

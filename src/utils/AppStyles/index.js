@@ -23,6 +23,10 @@ export const appStyles = StyleSheet.create({
         backgroundColor: colors.white,
         paddingHorizontal: 20,
     },
+    main:{
+        flex:1,
+        backgroundColor:colors.black,
+    },
     rootContainer: {
         flex: 1,
         backgroundColor: colors.white

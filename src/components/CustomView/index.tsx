@@ -1,71 +1,53 @@
-import { Pressable, Text, TouchableOpacity, View } from "react-native";
+import { Text, TouchableOpacity, View, Image } from "react-native";
 import { colors } from "../../utils/colors";
+import { appStyles } from "../../utils/AppStyles";
 import CustomText from "../CustomText";
-import React from "react";
+import { images } from "../../assets";
+import { Spacer } from "../Spacer";
 
 type Props = {
-  text?: string;
-  onPress?: any;
-  width?: any;
-  height?: number;
-  size?: number;
-  fontFam?: any;
-  elevation?: number;
-  borderRadius?: number;
-  style?: any;
-  bgColor?: any;
-  textColor?: any;
-  borderColor?: any;
-  children?:any
+  title?: string;
+  firstImage?: any;
+  secondImage?: any;
+  thirdImage?: any;
+  thirdHeight?: number;
+  thirdWidth?: number;
   borderWidth?:number
-  paddingHorizontal?:number
-  paddingVertical?:number
-  paddingTop?:number
-  paddingBottom?:number
-  
+  children?:any
+  onPress?:any
 };
 
 const CustomView = ({
-  text,
-  onPress,
-  width,
-  height,
-  size,
-  fontFam,
-  elevation,
-  borderRadius,
-  style,
-  bgColor,
-  textColor,
-  borderColor,
-  children,
+  title,
+  firstImage,
+  secondImage,
+  thirdImage,
+  thirdHeight,
+  thirdWidth,
   borderWidth,
-  paddingHorizontal,
-  paddingVertical,
-  paddingTop,
-  paddingBottom
+  children,
+  onPress
 }: Props) => {
   return (
-    <View >
-      <View
-        style={{
-          ...style,
-          width: width || "100%",
-        //   height: height || 150,
-          backgroundColor: bgColor || colors.lightGray,
-          borderRadius: borderRadius || 15,
-          elevation: elevation,
-          borderWidth:borderWidth||  2,
-          borderColor: borderColor || colors.superLightGray,
-          paddingHorizontal:paddingHorizontal||  30,
-          paddingVertical: paddingVertical|| 10,
-          paddingTop:paddingTop,
-          paddingBottom:paddingBottom
-        }}
-      >
-      {children}
-      </View>
-    </View>
+    <TouchableOpacity
+    onPress={onPress}
+    activeOpacity={0.6}
+      style={{
+        paddingHorizontal: 15,
+       
+        // width: 120,
+        paddingVertical: 10,
+        flexDirection: "row",
+        alignItems: "center",
+        borderWidth:borderWidth,
+        borderColor:"#8F8F8F",
+        borderRadius:12,
+        backgroundColor:colors.grey2
+      }}
+    >
+        {children}
+
+    </TouchableOpacity>
   );
 };
 export default CustomView;
