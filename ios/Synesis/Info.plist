@@ -78,6 +78,8 @@
 		<string>Poppins-Regular.ttf</string>
 		<string>Poppins-SemiBold.ttf</string>
 		<string>BeVietnam-Italic.ttf</string>
+		<string>BlaakBold-PERSONAL.ttf</string>
+		<string>BlaakExtraBold-PERSONAL.ttf</string>
 	</array>
 	<key>UIBackgroundModes</key>
 	<array>

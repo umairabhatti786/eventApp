@@ -6,6 +6,14 @@
       "sha1": "0c268f45141531707ea5da2efab989d9ae3e6381"
     },
     {
+      "path": "assets/fonts/BlaakBold-PERSONAL.ttf",
+      "sha1": "45c71c73c41012b0026308071a855d99f7dc24c8"
+    },
+    {
+      "path": "assets/fonts/BlaakExtraBold-PERSONAL.ttf",
+      "sha1": "d6108f58330196cfc9964c6017dce24825c36826"
+    },
+    {
       "path": "assets/fonts/Poppins-Bold.ttf",
       "sha1": "875cf0cecd647bcf22e79d633d868c1b1ec98dfa"
     },

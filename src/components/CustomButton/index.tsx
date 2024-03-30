@@ -48,12 +48,12 @@ const CustomButton = ({
         ...style,
         width: width || "100%",
         height: height || 50,
-        backgroundColor: bgColor || colors.primary,
+        backgroundColor: bgColor || colors.blue,
         justifyContent: "center",
         alignItems: "center",
-        borderRadius: borderRadius || 12,
+        borderRadius: borderRadius || 10,
         borderWidth: 2,
-        borderColor: borderColor || colors.primary,
+        borderColor: borderColor || colors.blue,
       }}
     >
       {isLoading ? (
@@ -65,9 +65,9 @@ const CustomButton = ({
         <CustomText
           text={text}
           color={textColor || colors.white}
-          fontWeight={500}
-          size={size || disable ? 15 : 18}
-          fontFam={fontFam ||"sf-pro-text-semibold"}
+          fontWeight={"600"}
+          size={size || 18}
+          fontFam={fontFam ||"SF-Pro-Text-Regular"}
         />
       )}
     </TouchableOpacity>

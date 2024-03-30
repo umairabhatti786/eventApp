@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   Alert,
   LogBox,
@@ -22,11 +22,13 @@ import CustomText from "../../../components/CustomText";
 import { appStyles } from "../../../utils/AppStyles";
 import { windowWidth } from "../HomeChat/ChatList";
 import EventContainer from "./EventContainer";
+import CalendarDetailSheet from "../CalendarDetailSheet";
 
-export const Events = () => {
+export const Events = ({navigation}) => {
   const [focused, setFocused] = useState(1);
   const [isActive, setIsActive] = useState(0);
 
+  const CalendarSheetRef=useRef()
   // const eventLists = [
   //   {
   //     month: 'October',
@@ -91,7 +93,7 @@ export const Events = () => {
     },
   ];
 
-  const TBDEvent=[
+  const TBDEvent = [
     {
       img: images.eventimage3,
       title: "Random Event Title!",
@@ -116,8 +118,7 @@ export const Events = () => {
       time: "TBD",
       des: "Hosted by Jim and John",
     },
-
-  ]
+  ];
 
   const renderItem = ({ section, item }) => {
     return (
@@ -132,17 +133,6 @@ export const Events = () => {
     );
   };
 
-  const renderSectionHeader = ({ section }: any) => (
-    <View style={{ flexDirection: "row", alignItems: "center" }}>
-      <CustomText
-        text={section}
-        color={colors.grey300}
-        fontWeight="600"
-        size={15}
-      />
-    </View>
-  );
-
   return (
     <>
       <View
@@ -150,8 +140,7 @@ export const Events = () => {
           flex: 1,
           backgroundColor: colors.black,
           paddingTop: Platform.OS == "ios" ? 40 : 30,
-        }}
-      >
+        }}>
         <View style={{ paddingHorizontal: 20 }}>
           <CustomHeader
             title="Calendar"
@@ -166,21 +155,22 @@ export const Events = () => {
                 <View style={{ marginRight: 15 }}>
                   <CustomView
                     onPress={() => setIsActive(index)}
-                    borderWidth={isActive == index ? 1 : 0}
-                  >
-                    <Image
-                      style={{ width: 20, height: 20, borderRadius: 5 }}
-                      source={index == 0 ? images.calandericon : images.tbd}
-                    />
-                    <Spacer width={10} />
+                    borderWidth={isActive == index ? 1 : 0}>
+                    <View style={appStyles.row}>
+                      <Image
+                        style={{ width: 20, height: 20, borderRadius: 5 }}
+                        source={index == 0 ? images.calandericon : images.tbd}
+                      />
+                      <Spacer width={10} />
 
-                    <CustomText
-                      text={item}
-                      color={colors.white}
-                      size={16}
-                      // fontWeight='700'
-                      fontFam="SF-Pro-Text-Regular"
-                    />
+                      <CustomText
+                        text={item}
+                        color={colors.white}
+                        size={16}
+                        // fontWeight='700'
+                        fontFam="SF-Pro-Text-Regular"
+                      />
+                    </View>
                   </CustomView>
                 </View>
               );
@@ -204,97 +194,83 @@ export const Events = () => {
           </View>
           {/* <Spacer height={5} /> */}
           <ScrollView>
-            {
-              isActive==0?(
-                <SectionList
+            {isActive == 0 ? (
+              <SectionList
                 sections={eventData}
                 scrollEnabled={false}
                 contentContainerStyle={{ gap: 15 }}
                 keyExtractor={(item, index) => item + index}
-                renderItem={({ item }) => (
-                  <EventContainer item={item}/>
-                  
-                )}
+                renderItem={({ item }) => <EventContainer 
+                onPress={()=>CalendarSheetRef.current.open()}
+                item={item} />}
                 renderSectionHeader={({ section: { month } }) => (
                   <View
                     style={{
                       flexDirection: "row",
                       alignItems: "center",
                       marginVertical: 35,
-                    }}
-                  >
+                    }}>
                     <CustomText
                       text={month}
                       color={colors.grey300}
                       fontWeight="600"
                       size={17}
                     />
-  
+
                     <View
                       style={{
-                        height: 0.3,
+                        height: 0.4,
                         width: "85%",
                         backgroundColor: colors.gray1,
                         marginLeft: 20,
-                      }}
-                    ></View>
+                      }}></View>
                   </View>
                 )}
               />
+            ) : (
+              <View style={{ flex: 1 }}>
+                <View
+                  style={{
+                    flexDirection: "row",
+                    alignItems: "center",
+                    marginTop: 20,
+                    marginBottom: 30,
+                  }}>
+                  <CustomText
+                    text={"Date TBD"}
+                    color={colors.grey300}
+                    // fontWeight="500"
+                    fontFam="BeVietnam-Italic"
+                    size={17}
+                  />
 
-              ):(
-                <View style={{flex:1}} >
-
-<View
+                  <View
                     style={{
-                      flexDirection: "row",
-                      alignItems: "center",
-                      marginTop:20,
-                      marginBottom:30,
-
-                    }}
-                  >
-                    <CustomText
-                      text={"Date TBD"}
-                      color={colors.grey300}
-                      // fontWeight="500"
-                      fontFam="BeVietnam-Italic"
-                      size={17}
-                    />
-  
-                    <View
-                      style={{
-                        height: 0.3,
-                        width: "85%",
-                        backgroundColor: colors.gray1,
-                        marginLeft: 20,
-                      }}
-                    ></View>
-                  </View>
-
-                  <FlatList
-                data={TBDEvent}
-                contentContainerStyle={{ gap: 15 }}
-                keyExtractor={(item, index) => item + index}
-                renderItem={({ item }) => (
-                  <EventContainer 
-                  TBD
-                  item={item}/>
-                  
-                )}
-                
-              />
-
+                      height: 0.3,
+                      width: "85%",
+                      backgroundColor: colors.gray1,
+                      marginLeft: 20,
+                    }}></View>
                 </View>
 
-            
+                <FlatList
+                  data={TBDEvent}
+                  contentContainerStyle={{ gap: 15 }}
+                  keyExtractor={(item, index) => item + index}
+                  renderItem={({ item }) => <EventContainer
+                  onPress={()=>CalendarSheetRef.current.open()}
 
-              )
-            }
-           
+                   TBD item={item} />}
+                />
+              </View>
+            )}
           </ScrollView>
         </View>
       </View>
+      <CalendarDetailSheet
+    sheetRef={CalendarSheetRef}
+    navigation={navigation}
+    />
     </>
   );
 };

@@ -10,9 +10,10 @@ type Props = {
     lineHeight?: number
     numberOfLines?:number
     fontWeight?:string
+    textDecorationLine?:any
 }
 
-const CustomText = ({ color, size, fontFam, text, style, lineHeight,numberOfLines,fontWeight }: Props) => {
+const CustomText = ({ color, size, fontFam, text, style, lineHeight,numberOfLines,fontWeight,textDecorationLine }: Props) => {
     return (
         <Text
         numberOfLines={numberOfLines}
@@ -21,7 +22,8 @@ const CustomText = ({ color, size, fontFam, text, style, lineHeight,numberOfLine
                     color: color || colors.black,
                     fontSize: size || 12,
                     fontWeight: fontWeight ||"500",
-                    fontFamily: fontFam || "SF-Pro-Text-Regular",
+                    textDecorationLine:textDecorationLine,
+                    fontFamily: fontFam || "BlaakExtraBold-PERSONAL",
                     ...(lineHeight && { lineHeight: lineHeight }),
                 }, style
             ]}

@@ -9,12 +9,14 @@ type Props = {
   navigation?: any;
   textColor?: string;
   filterNotREquired?: boolean;
+  backgroundColor?:any
 };
 
 const SearchBar = ({
   placeholder,
   onChangeText,
   textColor,
+  backgroundColor
 }: Props) => {
   return (
     <View style={style.main}>
@@ -24,7 +26,7 @@ const SearchBar = ({
           justifyContent: "space-between",
           alignItems: "center",
           flex: 1,
-          backgroundColor: colors.lightBlack,
+          backgroundColor:backgroundColor ||   colors.lightBlack,
           height: 40,
           paddingHorizontal: 15,
           borderRadius: 10,

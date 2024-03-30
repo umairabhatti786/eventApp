@@ -15,7 +15,12 @@ type Props = {
   borderWidth?:number
   children?:any
   onPress?:any
+  paddingHorizontal?:any
+  paddingVertical?:any
+  backgroundColor?:any
+  borderRadius?:number
 };
+
 
 const CustomView = ({
   title,
@@ -26,23 +31,25 @@ const CustomView = ({
   thirdWidth,
   borderWidth,
   children,
-  onPress
+  onPress,
+  paddingHorizontal,
+  paddingVertical,
+  backgroundColor,
+  borderRadius
 }: Props) => {
   return (
     <TouchableOpacity
     onPress={onPress}
     activeOpacity={0.6}
       style={{
-        paddingHorizontal: 15,
+        paddingHorizontal: paddingHorizontal|| 15,
        
         // width: 120,
-        paddingVertical: 10,
-        flexDirection: "row",
-        alignItems: "center",
+        paddingVertical:  paddingVertical || 10,
         borderWidth:borderWidth,
         borderColor:"#8F8F8F",
-        borderRadius:12,
-        backgroundColor:colors.grey2
+        borderRadius:borderRadius|| 12,
+        backgroundColor: backgroundColor|| colors.grey2
       }}
     >
         {children}

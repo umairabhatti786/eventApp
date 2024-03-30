@@ -8,6 +8,7 @@ import {
   Platform,
   Image,
   Dimensions,
+  TouchableOpacity,
 } from "react-native";
 import { colors } from "../../../utils/colors";
 import CustomBottomTab from "../../../components/CustomBottomTab";
@@ -31,7 +32,7 @@ const FriendList = ({item}:any) => {
 
   return (
     <>
-    <View style={{width:"100%",height:74,borderRadius:12,backgroundColor:"#1D2029",padding:5,flexDirection:"row",alignItems:"center",}}>
+    <TouchableOpacity style={{width:"100%",height:74,borderRadius:12,backgroundColor:"#1D2029",padding:5,flexDirection:"row",alignItems:"center",}}>
         <View style={{width:65,height:65}}>
             <Image style={{width:"100%",height:"100%",borderRadius:10}}
             source={item?.img}
@@ -95,7 +96,7 @@ const FriendList = ({item}:any) => {
 
         </View>
 
-    </View>
+    </TouchableOpacity>
     
     </>
   );

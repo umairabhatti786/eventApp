@@ -1,14 +1,17 @@
 import React, { useEffect } from "react";
-import { Alert, LogBox, StyleSheet, View, Text, Image } from "react-native";
+import { Alert, LogBox, StyleSheet, View, Text, Image, TouchableOpacity } from "react-native";
 import { colors } from "../../../utils/colors";
 import CustomText from "../../../components/CustomText";
 import { Spacer } from "../../../components/Spacer";
 import { appStyles } from "../../../utils/AppStyles";
 import { windowWidth } from "../../../utils/CommonFun";
 
-export const EventContainer = ({ item ,TBD}: any) => {
+export const EventContainer = ({ item ,TBD,onPress}: any) => {
   return (
-    <View style={{ ...appStyles.row,}}>
+    <TouchableOpacity 
+    activeOpacity={0.6}
+    onPress={onPress}
+    style={{ ...appStyles.row,}}>
       {item.date && (
         <View style={{          marginRight: 30,
         }}>
@@ -77,7 +80,7 @@ export const EventContainer = ({ item ,TBD}: any) => {
           size={11}
         />
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 

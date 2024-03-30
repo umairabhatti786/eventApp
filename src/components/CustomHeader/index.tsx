@@ -12,10 +12,13 @@ type Props = {
     thirdImage?:any
     thirdHeight?:number,
     thirdWidth?:number
+    onProfile?:any
+    onNotification?:any
+    onInbox?:any
     
 }
 
-const CustomHeader = ({ title,firstImage,secondImage,thirdImage,thirdHeight,thirdWidth }: Props) => {
+const CustomHeader = ({ title,firstImage,secondImage,thirdImage,thirdHeight,thirdWidth,onProfile ,onNotification,onInbox}: Props) => {
     return (
         <View style={appStyles.rowjustify}>
 
@@ -29,7 +32,10 @@ const CustomHeader = ({ title,firstImage,secondImage,thirdImage,thirdHeight,thir
 
             <View style={appStyles.row}>
 
-                <TouchableOpacity>
+                <TouchableOpacity
+                activeOpacity={0.6}
+                onPress={onProfile}
+                >
                     <Image
                     style={{width:25,height:25}}
                     source={firstImage||  images.profile}
@@ -40,7 +46,10 @@ const CustomHeader = ({ title,firstImage,secondImage,thirdImage,thirdHeight,thir
                 </TouchableOpacity>
                 <Spacer width={15}/>
 
-                <TouchableOpacity>
+                <TouchableOpacity
+                 activeOpacity={0.6}
+                 onPress={onNotification}
+                >
                     <Image
                     style={{width:23,height:23}}
                     source={secondImage ||  images.bell}
@@ -51,7 +60,10 @@ const CustomHeader = ({ title,firstImage,secondImage,thirdImage,thirdHeight,thir
                 <Spacer width={20}/>
 
 
-                <TouchableOpacity>
+                <TouchableOpacity
+                 activeOpacity={0.6}
+                 onPress={onInbox}
+                >
                     <Image
                     style={{width: thirdWidth ||26,height: thirdHeight ||26}}
                     source={ thirdImage|| images.edit}

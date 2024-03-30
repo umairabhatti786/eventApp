@@ -1,13 +1,23 @@
-import React from 'react'
-import { colors } from '../../utils/colors'
-import { View } from 'react-native'
+import React from "react";
+import { colors } from "../../utils/colors";
+import { View } from "react-native";
 
-type Props = {}
+type Props = {
+  height?: any;
+  backgroundColor?: any;
+  width?: any;
+};
 
-const CustomLine = (props: Props) => {
-    return (
-        <View style={{ height: 3, backgroundColor: colors.grey }} />
-    )
-}
+const CustomLine = ({ height, width, backgroundColor }: Props) => {
+  return (
+    <View
+      style={{
+        height: height || 0.5,
+        width: width,
+        backgroundColor: backgroundColor || colors.grey500,
+      }}
+    />
+  );
+};
 
-export default CustomLine
+export default CustomLine;

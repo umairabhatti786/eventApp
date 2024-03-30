@@ -8,6 +8,7 @@ import {
   Platform,
   Image,
   Dimensions,
+  TouchableOpacity,
 } from "react-native";
 import { colors } from "../../../utils/colors";
 import CustomBottomTab from "../../../components/CustomBottomTab";
@@ -20,12 +21,15 @@ import CustomText from "../../../components/CustomText";
 import { Spacer } from "../../../components/Spacer";
 export const windowWidth = Dimensions.get("window").width;
 
-const ChatList = ({item}:any) => {
+const ChatList = ({item,onPress}:any) => {
   console.log("itemList",item)
 
   return (
     <>
-      <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+      <TouchableOpacity 
+      onPress={onPress}
+      activeOpacity={0.6}
+      style={{ flexDirection: "row", justifyContent: "space-between" }}>
         <View style={{ width: "20%" ,flexDirection:"row"}}>
 
          
@@ -105,7 +109,7 @@ const ChatList = ({item}:any) => {
             }}
           />
         </View>
-      </View>
+      </TouchableOpacity>
     </>
   );
 };

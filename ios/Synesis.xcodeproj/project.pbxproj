@@ -15,6 +15,7 @@
 		2992CE0E6292451A98F1F1A1 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0DC4C71450CE42EA8408A0FF /* Poppins-Light.ttf */; };
 		2CE77B08D8E14D26A1D5650C /* sf-pro-text-semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A015FFF7D1074FC283D9AA7E /* sf-pro-text-semibold.ttf */; };
 		4017264C25D048B497AFE964 /* BeVietnam-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 82890384AC25490F892E66A2 /* BeVietnam-Italic.ttf */; };
+		45A9D811A8B94D8187878A45 /* BlaakBold-PERSONAL.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC22DB47AB6444DA92FD7634 /* BlaakBold-PERSONAL.ttf */; };
 		54E8327CFB9F3F8A1143C41A /* libPods-Synesis-SynesisTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C24900F6AF198056508B9935 /* libPods-Synesis-SynesisTests.a */; };
 		69514872303A4CA18FEF0127 /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D5375A5491E74DD7BEB548D1 /* SF-Pro-Text-Regular.otf */; };
 		6B8F8CB91B92421084C3535C /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 271EAACD9D1B4B64832C0D87 /* Poppins-Bold.ttf */; };
@@ -23,6 +24,7 @@
 		AAC00B016B2845FFA560C41E /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 35DF3A808FC9428191CB544C /* Poppins-Regular.ttf */; };
 		D017DA034B364F32ABA045A9 /* SF-Pro-Display-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 87DEA25EB5C748C198BAF643 /* SF-Pro-Display-Bold.ttf */; };
 		ED6E6E00D46039453289147B /* libPods-Synesis.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F55AC02BD4E4B894384AB23E /* libPods-Synesis.a */; };
+		64BFDD4614D345E5BB5F0C64 /* BlaakExtraBold-PERSONAL.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7A30B533F6564CC1AED90C77 /* BlaakExtraBold-PERSONAL.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		D5375A5491E74DD7BEB548D1 /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "SF-Pro-Text-Regular.otf"; path = "../assets/fonts/SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		F55AC02BD4E4B894384AB23E /* libPods-Synesis.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Synesis.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC22DB47AB6444DA92FD7634 /* BlaakBold-PERSONAL.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "BlaakBold-PERSONAL.ttf"; path = "../assets/fonts/BlaakBold-PERSONAL.ttf"; sourceTree = "<group>"; };
+		7A30B533F6564CC1AED90C77 /* BlaakExtraBold-PERSONAL.ttf */ = {isa = PBXFileReference; name = "BlaakExtraBold-PERSONAL.ttf"; path = "../assets/fonts/BlaakExtraBold-PERSONAL.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +185,8 @@
 				35DF3A808FC9428191CB544C /* Poppins-Regular.ttf */,
 				66F727AD66D4491BB81DCD1D /* Poppins-SemiBold.ttf */,
 				82890384AC25490F892E66A2 /* BeVietnam-Italic.ttf */,
+				FC22DB47AB6444DA92FD7634 /* BlaakBold-PERSONAL.ttf */,
+				7A30B533F6564CC1AED90C77 /* BlaakExtraBold-PERSONAL.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -291,6 +297,8 @@
 				AAC00B016B2845FFA560C41E /* Poppins-Regular.ttf in Resources */,
 				8B496E1CE86C4CF694E37B48 /* Poppins-SemiBold.ttf in Resources */,
 				4017264C25D048B497AFE964 /* BeVietnam-Italic.ttf in Resources */,
+				45A9D811A8B94D8187878A45 /* BlaakBold-PERSONAL.ttf in Resources */,
+				64BFDD4614D345E5BB5F0C64 /* BlaakExtraBold-PERSONAL.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -669,25 +677,7 @@
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
-					"-Wl",
-					"-ld_classic",
-					"-Wl",
-					"-ld_classic",
-					"-Wl",
-					"-ld_classic",
-					"-Wl",
-					"-ld_classic",
-					"-Wl",
-					"-ld_classic",
-					"-Wl",
-					"-ld_classic",
-					"-Wl",
-					"-ld_classic",
-					"-Wl",
-					"-ld_classic",
-					"-Wl",
-					"-ld_classic",
-					"-Wl -ld_classic ",
+					" ",
 				);
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
@@ -760,25 +750,7 @@
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
-					"-Wl",
-					"-ld_classic",
-					"-Wl",
-					"-ld_classic",
-					"-Wl",
-					"-ld_classic",
-					"-Wl",
-					"-ld_classic",
-					"-Wl",
-					"-ld_classic",
-					"-Wl",
-					"-ld_classic",
-					"-Wl",
-					"-ld_classic",
-					"-Wl",
-					"-ld_classic",
-					"-Wl",
-					"-ld_classic",
-					"-Wl -ld_classic ",
+					" ",
 				);
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
